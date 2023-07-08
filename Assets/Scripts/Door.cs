@@ -16,14 +16,46 @@ public enum OpeningPosition
 public class Door : MonoBehaviour
 {
     public OpeningPosition openingPosition;
+    public Sprite LightThemeOuter;
+    public Sprite LightThemeInner;
+    public Sprite DarkThemeOuter;
+    public Sprite DarkThemeInner;
+
+    private SpriteRenderer refToParrent;
+    private SpriteRenderer refToSelf;
+
+
+    public static bool currentlyInDarkTheme = false;
+
     // only used for starting definition - to toggle use debug toggle 
     public bool isOpened;
     public float howFar;
 
     public bool debugToggle = false;
 
+    private void Start()
+    {
+        refToParrent = GetComponentInParent<SpriteRenderer>(true);
+        refToSelf = GetComponent<SpriteRenderer>();
+
+    }
+
     private void Update()
     {
+        if (currentlyInDarkTheme)
+        {
+            refToParrent.sprite = DarkThemeOuter;
+
+            refToSelf.sprite = DarkThemeInner;
+    
+        }
+        else
+        {
+            refToParrent.sprite = LightThemeOuter;
+            refToSelf.sprite = LightThemeInner;
+        }
+        
+
         if (debugToggle)
         {
             ChangeDoor();
