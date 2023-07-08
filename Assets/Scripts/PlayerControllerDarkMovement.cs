@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerDarkMovement : MonoBehaviour
 {
+    public PlayerControllerLightFlight otherController;
+
     public float speed = 15f;
     public float jumpForce = 5f;
 
@@ -12,26 +14,19 @@ public class PlayerController : MonoBehaviour
     //private float jumpForceMultiplier = 1.5f;
     //private float timeHeldJumpButtonDown = 0f;
 
-    public string aliveTag = "Alive";
-    public string deathTag = "Death";
-
-
     private Rigidbody2D rb;
     private bool isGrounded = false;
     private Collider2D playerCollider;
 
+    public string deathTag = "Death";
     public delegate void KillEvent();
     public static event KillEvent PlayerKilled;
-
-    public delegate void AliveEvent();
-    public static event AliveEvent PlayerAwoke;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
-
     }
 
     //private void Update()
@@ -81,15 +76,17 @@ public class PlayerController : MonoBehaviour
             if (PlayerKilled != null)
             {
                 PlayerKilled.Invoke();
+
             }
+
+            otherController.gameObject.transform.position = gameObject.transform.position;
+            //offset a bit
+            //otherController.gameObject.transform.position *= Vector2.up * 1.5f;
+
+            // switch game controllers
+            otherController.gameObject.SetActive(true);
+                gameObject.SetActive(false);
         }
 
-        if (collision.gameObject.CompareTag(aliveTag))
-        {
-            if (PlayerAwoke != null)
-            {
-                PlayerAwoke.Invoke();
-            }
-        }
     }
 }

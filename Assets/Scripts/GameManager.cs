@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static PlayerController;
+using static PlayerControllerLightFlight;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,15 +14,15 @@ public class GameManager : MonoBehaviour
     {
         AudioPlayer1.GetComponent<AudioSource>();
 
-        PlayerController.PlayerKilled += SwitchMusic;
-        PlayerController.PlayerAwoke+= SwitchMusic;
+        //PlayerControllerDarkMovement.PlayerKilled += SwitchMusic;
+        //PlayerControllerLightFlight.PlayerAwoke+= SwitchMusic;
     }
 
 
     private void OnDestroy()
     {
-        PlayerController.PlayerKilled -= SwitchMusic;
-        PlayerController.PlayerAwoke -= SwitchMusic;
+        PlayerControllerDarkMovement.PlayerKilled -= SwitchMusic;
+        PlayerControllerLightFlight.PlayerAwoke -= SwitchMusic;
     }
 
     // Update is called once per frame
