@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4234588420678727227}
   m_Layer: 0
   m_Name: PlayerMovement
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   speed: 15
   jumpForce: 7.13
   raycastDistance: 5
+  childWithCollider: {fileID: 0}
   deathTag: Death
 --- !u!50 &3257131562247741269
 Rigidbody2D:
