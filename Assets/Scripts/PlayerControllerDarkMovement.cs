@@ -56,14 +56,14 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
     bool CheckGrounded()
     {
         // Perform a raycast downwards to check if the player is grounded
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left * 0.4f, Vector2.down, raycastDistance, LayerMask.GetMask("Ground"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left * 0.3f, Vector2.down, raycastDistance, LayerMask.GetMask("Ground"));
 
         if (hit.collider != null)
         {
             return true;
         }
 
-        hit = Physics2D.Raycast(transform.position + Vector3.right * 0.4f, Vector2.down, raycastDistance, LayerMask.GetMask("Ground"));
+        hit = Physics2D.Raycast(transform.position + Vector3.right * 0.3f, Vector2.down, raycastDistance, LayerMask.GetMask("Ground"));
 
         if (hit.collider != null)
         {

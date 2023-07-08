@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 276265142}
   - component: {fileID: 276265141}
   - component: {fileID: 276265140}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Brittle Block (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1119,7 +1119,7 @@ GameObject:
   - component: {fileID: 743477688}
   - component: {fileID: 743477687}
   - component: {fileID: 743477686}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Brittle Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4044,57 +4044,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
---- !u!1 &1857598354 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7158990426911866257, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
-  m_PrefabInstance: {fileID: 5927981692655988283}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1857598361 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4073036216695015951, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
   m_PrefabInstance: {fileID: 5927981692655988283}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857598354}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb9c11787871fdb44949a43baf57685d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &1857598362
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857598354}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.97, y: 2.06}
-  m_Direction: 0
 --- !u!114 &1920537050 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5803738983334849525, guid: 45c29e8e02b8f40f2a5f4656e02f2f96, type: 3}
@@ -4114,14 +4074,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1017864946050416845, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 6116c5c0c37d2e8499cf72d4675fcbd5, type: 3}
-    - target: {fileID: 1017864946050416845, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3387756340876026493, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4174,26 +4126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerFlight
       objectReference: {fileID: 0}
-    - target: {fileID: 7158990426911866257, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8463983448388481459, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 8463983448388481459, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.06
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8463983448388481459, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7158990426911866257, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1857598362}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
 --- !u!1001 &7112484833913136094
 PrefabInstance:
@@ -4256,7 +4192,8 @@ PrefabInstance:
       value: PlayerMovement
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4281556410789127415, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
