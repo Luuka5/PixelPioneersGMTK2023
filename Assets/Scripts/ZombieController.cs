@@ -2,36 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZombieController : MonoBehaviour
+public class ZombieController : MonoBehaviour, ICollidable
 {
     public LayerMask layerMask;
     public float speed;
     public bool isDirectionRight = true;
     public BoxCollider2D fallingCollider;
     public BoxCollider2D frontCollider;
+    public Rigidbody2D rb;
+    
+    public GameObject childWithCollider;
+    private bool isGrounded = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        ChildCollider cColl = childWithCollider.AddComponent<ChildCollider>();
+        rb = GetComponent<Rigidbody2D>();
+        cColl.LinkModels(this);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = transform.position + new Vector3(isDirectionRight ? speed : -speed, 0, 0);
-        if (Physics2D.IsTouchingLayers(frontCollider, 
-            layerMask//LayerMask.GetMask("Ground")
-        ) /*|| !Physics2D.IsTouchingLayers(fallingCollider, 
+        rb.velocity = new Vector2(isDirectionRight ? speed : -speed, rb.velocity.y);
+        if (isGrounded//LayerMask.GetMask("Ground")
+         /*|| !Physics2D.IsTouchingLayers(fallingCollider, 
             layerMask//LayerMask.GetMask("Ground")
         )*/)
         {
-            Debug.Log("Change direction");
             ChangeDirection();
+            Debug.Log("isGrounded: "+ isGrounded);
         };
     }
 
     private void ChangeDirection() {
         isDirectionRight = !isDirectionRight;
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        ChangeDirection();
+    }
+
+    public void CollisionDetected(Collision2D collision)
+    {
+        isGrounded = true;
+    }
+
+    public void CollisionExited()
+    {
+        isGrounded = false;
     }
 }
