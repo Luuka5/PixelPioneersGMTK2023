@@ -6,11 +6,16 @@ using static PlayerControllerLightFlight;
 
 public class GameManager : MonoBehaviour
 {
+    public Camera GameCamera;
     public SoundManager SoundManager;
+
+    private CameraShake camFX;
 
     // Start is called before the first frame update
     void Start()
     {
+        camFX = GameCamera.GetComponent<CameraShake>();
+
         PlayerControllerDarkMovement.PlayerKilled += SwitchMusicDead;
         PlayerControllerLightFlight.PlayerAwoke+= SwitchMusicAlive;
     }
@@ -30,10 +35,12 @@ public class GameManager : MonoBehaviour
 
     private void SwitchMusicAlive()
     {
+        StartCoroutine(camFX.Shake(0.5f, 0.5f));
         SoundManager.SwitchToAliveMusic();
     }
     private void SwitchMusicDead()
     {
+        StartCoroutine(camFX.Shake(0.5f, 0.5f));
         SoundManager.SwitchToDeadMusic();
     }
 }
