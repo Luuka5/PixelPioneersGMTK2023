@@ -107,4 +107,7 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
     {
         isGrounded = false;
     }
+
+
+ 
 }
