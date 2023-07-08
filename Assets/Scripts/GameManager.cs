@@ -8,13 +8,12 @@ public class GameManager : MonoBehaviour
 {
     public AudioSource AudioPlayer1;
     public PlayerController Player;
-
+    public MusicManager MusicManager;
 
     // Start is called before the first frame update
     void Start()
     {
         AudioPlayer1.GetComponent<AudioSource>();
-        Player.GetComponent<PlayerController>();
 
 
         Player.PlayerKilled += SwitchMusic;
@@ -29,9 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void SwitchMusic()
     {
-        //TODO
-        throw new NotImplementedException();
+        MusicManager.PlayAliveMusic();
     }
-
 
 }
