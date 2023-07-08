@@ -6,8 +6,8 @@ using static PlayerControllerLightFlight;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioSource AudioPlayer1;
-
+    public PlayerController Player;
+    public MusicManager MusicManager;
 
     // Start is called before the first frame update
     void Start()
@@ -33,10 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void SwitchMusic()
     {
-        Debug.LogWarning("works");
-        //TODO
-        throw new NotImplementedException();
+        MusicManager.PlayAliveMusic();
     }
-
 
 }
