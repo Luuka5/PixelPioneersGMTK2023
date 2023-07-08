@@ -19,25 +19,12 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(Testing());
     }
 
     // Update is called once per frame
     void Update()
     {
     }
-
-    
-    private IEnumerator Testing()
-    {
-        yield return new WaitForSeconds(5);
-        while (true) {
-            PlayDeadMusic();
-            yield return new WaitForSeconds(10);
-            PlayAliveMusic();
-            yield return new WaitForSeconds(10);
-        }
-    } 
 
     public void PlayDeadMusic()
     {
