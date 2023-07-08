@@ -3877,6 +3877,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6116c5c0c37d2e8499cf72d4675fcbd5, type: 3}
+    - target: {fileID: 1017864946050416845, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3387756340876026493, guid: 5bff9e7dc0dd447429115e18302db30d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4022,6 +4026,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 107ee68b6dfe476498f10cbaad474a8f, type: 3}
+    - target: {fileID: 4128545437906983558, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7585118749569726090, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
       propertyPath: m_Name
       value: PlayerMovement
