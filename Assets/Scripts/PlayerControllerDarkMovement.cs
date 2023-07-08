@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class PlayerControllerDarkMovement : MonoBehaviour
+public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
 {
     public PlayerControllerLightFlight otherController;
 
@@ -11,7 +11,7 @@ public class PlayerControllerDarkMovement : MonoBehaviour
     public float jumpForce = 5f;
     public float raycastDistance = 0.2f;
 
-
+    public GameObject childWithCollider;
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
@@ -25,7 +25,8 @@ public class PlayerControllerDarkMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerCollider = GetComponent<Collider2D>();
+        ChildCollider cColl = childWithCollider.AddComponent<ChildCollider>();
+        cColl.LinkModels(this);
     }
 
 
@@ -41,8 +42,8 @@ public class PlayerControllerDarkMovement : MonoBehaviour
         // Check if the player is on the ground
 
         //isGrounded = Physics2D.IsTouchingLayers(playerCollider, LayerMask.GetMask("Ground"));
-        bool isGrounded = CheckGrounded() && Physics2D.IsTouchingLayers(playerCollider, LayerMask.GetMask("Ground"));
-
+        //bool isGrounded = CheckGrounded() && Physics2D.IsTouchingLayers(playerCollider, LayerMask.GetMask("Ground"));
+   
 
         // Jumping
         if (isGrounded && jumpInput )
@@ -89,10 +90,21 @@ public class PlayerControllerDarkMovement : MonoBehaviour
 
             // switch game controllers
             otherController.gameObject.SetActive(true);
-                gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
+
+       
+    
+        
     }
 
+    public void CollisionDetected(Collision2D collision)
+    {
+        isGrounded = true;
+    }
 
-
+    public void CollisionExited()
+    {
+        isGrounded = false;
+    }
 }
