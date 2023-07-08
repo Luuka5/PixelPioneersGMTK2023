@@ -272,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &90067695
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -426,7 +426,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherController: {fileID: 1857598361}
   speed: 15
-  jumpForce: 5
+  jumpForce: 7.13
+  raycastDistance: 5
   deathTag: Death
 --- !u!1 &519420028
 GameObject:
@@ -802,7 +803,7 @@ GameObject:
   - component: {fileID: 1320117401}
   m_Layer: 6
   m_Name: corpse
-  m_TagString: Death
+  m_TagString: Corpse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -912,7 +913,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320117400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.48, y: -2.3, z: 0}
+  m_LocalPosition: {x: 5.48, y: 1.1, z: 0}
   m_LocalScale: {x: 0.807395, y: 0.38840014, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1068,7 +1069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1857598356
 Transform:
   m_ObjectHideFlags: 0
@@ -1144,14 +1145,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857598354}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1223,4 +1224,4 @@ MonoBehaviour:
   otherController: {fileID: 90067700}
   speed: 15
   jumpForce: 5
-  aliveTag: Alive
+  aliveTag: Corpse

@@ -9,10 +9,9 @@ public class PlayerControllerDarkMovement : MonoBehaviour
 
     public float speed = 15f;
     public float jumpForce = 5f;
+    public float raycastDistance = 0.2f;
 
-    // not working
-    //private float jumpForceMultiplier = 1.5f;
-    //private float timeHeldJumpButtonDown = 0f;
+
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
@@ -29,44 +28,49 @@ public class PlayerControllerDarkMovement : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
     }
 
-    //private void Update()
-    //{
-    //    // to allow dynamic jumping based on long press
-
-    //    bool jumpInput = Input.GetButtonDown("Jump");
-
-    //    // Jumping
-    //    if (jumpInput)
-    //    {
-    //        if (timeHeldJumpButtonDown <= 1f)
-    //            timeHeldJumpButtonDown += 0.01f;
-    //    }
-        
-
-    //}
-
 
     void FixedUpdate()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        float jumpInput = Input.GetAxis("Jump");
+        //float jumpInput = Input.GetAxis("Jump");
+        bool jumpInput = Input.GetButton("Jump");
 
         // Move horizontally
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
 
         // Check if the player is on the ground
-        isGrounded = Physics2D.IsTouchingLayers(playerCollider, LayerMask.GetMask("Ground"));
-        
+
+        //isGrounded = Physics2D.IsTouchingLayers(playerCollider, LayerMask.GetMask("Ground"));
+        bool isGrounded = CheckGrounded() && Physics2D.IsTouchingLayers(playerCollider, LayerMask.GetMask("Ground"));
+
 
         // Jumping
-        if (isGrounded && jumpInput >0)
+        if (isGrounded && jumpInput )
         {
-            //float nJmp = jumpForce * (jumpForceMultiplier * timeHeldJumpButtonDown);
-            //rb.AddForce(new Vector2(0f, nJmp), ForceMode2D.Impulse);
-
-            //timeHeldJumpButtonDown = 0;
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
+    }
+
+    bool CheckGrounded()
+    {
+        // Perform a raycast downwards to check if the player is grounded
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, LayerMask.GetMask("Ground"));
+
+        if (hit.collider != null)
+        {
+            // Adjust the player's position if a surface is detected above
+            //float distance = Mathf.Abs(hit.point.y - playerCollider.bounds.center.y+1);
+            //float offset = playerCollider.bounds.extents.y;
+
+            //if (distance < offset)
+            //{
+            //    transform.position += Vector3.down * (offset - distance);
+            //    return true;
+            //}
+            return true;
+        }
+
+        return false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -87,6 +91,8 @@ public class PlayerControllerDarkMovement : MonoBehaviour
             otherController.gameObject.SetActive(true);
                 gameObject.SetActive(false);
         }
-
     }
+
+
+
 }
