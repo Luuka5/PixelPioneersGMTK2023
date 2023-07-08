@@ -43,31 +43,30 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
 
         //isGrounded = Physics2D.IsTouchingLayers(playerCollider, LayerMask.GetMask("Ground"));
         //bool isGrounded = CheckGrounded() && Physics2D.IsTouchingLayers(playerCollider, LayerMask.GetMask("Ground"));
-   
+        isGrounded = CheckGrounded();
 
         // Jumping
         if (isGrounded && jumpInput )
         {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
 
     bool CheckGrounded()
     {
         // Perform a raycast downwards to check if the player is grounded
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, LayerMask.GetMask("Ground"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left * 0.4f, Vector2.down, raycastDistance, LayerMask.GetMask("Ground"));
 
         if (hit.collider != null)
         {
-            // Adjust the player's position if a surface is detected above
-            //float distance = Mathf.Abs(hit.point.y - playerCollider.bounds.center.y+1);
-            //float offset = playerCollider.bounds.extents.y;
+            return true;
+        }
 
-            //if (distance < offset)
-            //{
-            //    transform.position += Vector3.down * (offset - distance);
-            //    return true;
-            //}
+        hit = Physics2D.Raycast(transform.position + Vector3.right * 0.4f, Vector2.down, raycastDistance, LayerMask.GetMask("Ground"));
+
+        if (hit.collider != null)
+        {
             return true;
         }
 
