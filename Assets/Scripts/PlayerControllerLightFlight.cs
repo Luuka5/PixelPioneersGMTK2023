@@ -11,7 +11,7 @@ public class PlayerControllerLightFlight : MonoBehaviour
     public float jumpForce = 5f;
 
     private Rigidbody2D rb;
-    private bool isGrounded = false;
+
     private Collider2D playerCollider;
 
 

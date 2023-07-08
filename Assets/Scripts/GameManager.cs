@@ -6,23 +6,20 @@ using static PlayerControllerLightFlight;
 
 public class GameManager : MonoBehaviour
 {
-    public PlayerController Player;
     public MusicManager MusicManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        AudioPlayer1.GetComponent<AudioSource>();
-
-        //PlayerControllerDarkMovement.PlayerKilled += SwitchMusic;
-        //PlayerControllerLightFlight.PlayerAwoke+= SwitchMusic;
+        PlayerControllerDarkMovement.PlayerKilled += SwitchMusicDead;
+        PlayerControllerLightFlight.PlayerAwoke+= SwitchMusicAlive;
     }
 
 
     private void OnDestroy()
     {
-        PlayerControllerDarkMovement.PlayerKilled -= SwitchMusic;
-        PlayerControllerLightFlight.PlayerAwoke -= SwitchMusic;
+        PlayerControllerDarkMovement.PlayerKilled -= SwitchMusicDead;
+        PlayerControllerLightFlight.PlayerAwoke -= SwitchMusicAlive;
     }
 
     // Update is called once per frame
@@ -31,9 +28,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void SwitchMusic()
+    private void SwitchMusicAlive()
     {
         MusicManager.PlayAliveMusic();
     }
-
+    private void SwitchMusicDead()
+    {
+        MusicManager.PlayDeadMusic();
+    }
 }
