@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         AudioPlayer1.GetComponent<AudioSource>();
-        AudioPlayer1.GetComponent<PlayerController>();
+        Player.GetComponent<PlayerController>();
 
 
         Player.PlayerKilled += SwitchMusic;
