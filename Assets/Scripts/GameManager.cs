@@ -7,19 +7,23 @@ using static PlayerController;
 public class GameManager : MonoBehaviour
 {
     public AudioSource AudioPlayer1;
-    public PlayerController Player;
 
 
     // Start is called before the first frame update
     void Start()
     {
         AudioPlayer1.GetComponent<AudioSource>();
-        Player.GetComponent<PlayerController>();
 
-
-        Player.PlayerKilled += SwitchMusic;
+        PlayerController.PlayerKilled += SwitchMusic;
+        PlayerController.PlayerAwoke+= SwitchMusic;
     }
 
+
+    private void OnDestroy()
+    {
+        PlayerController.PlayerKilled -= SwitchMusic;
+        PlayerController.PlayerAwoke -= SwitchMusic;
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void SwitchMusic()
     {
+        Debug.LogWarning("works");
         //TODO
         throw new NotImplementedException();
     }
