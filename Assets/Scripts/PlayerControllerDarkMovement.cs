@@ -12,6 +12,7 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
     public float raycastDistance = 0.2f;
 
     public GameObject childWithCollider;
+    public GameObject corpsePrefab;
 
     private Rigidbody2D rb;
     private bool isGrounded = false;
@@ -81,7 +82,11 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
             if (PlayerKilled != null)
             {
                 PlayerKilled.Invoke();
+            }
 
+            if (gameObject.active) {
+                CorpseController corpseController = Instantiate(corpsePrefab, transform.position, Quaternion.identity).GetComponent<CorpseController>();
+                corpseController.inactiveSeconds = 1f;
             }
 
             otherController.gameObject.transform.position = gameObject.transform.position;
@@ -92,10 +97,6 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
             otherController.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
-
-       
-    
-        
     }
 
     public void CollisionDetected(Collision2D collision)

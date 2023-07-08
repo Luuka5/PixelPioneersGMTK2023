@@ -43,8 +43,9 @@ public class PlayerControllerLightFlight : MonoBehaviour
             if (PlayerAwoke != null)
             {
                 PlayerAwoke.Invoke();
-
             }
+
+            Destroy(collision.gameObject);
 
             otherController.gameObject.transform.position = gameObject.transform.position;
             otherController.gameObject.SetActive(true);
