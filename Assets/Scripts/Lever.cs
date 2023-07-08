@@ -11,9 +11,44 @@ public class Lever : MonoBehaviour
     public GameObject Untoggled;
     public GameObject Toggled;
 
+    public Sprite LightTheme;
+    public Sprite DarkTheme;
+
+
+    public static bool currentlyInDarkTheme = false;
+
+    private SpriteRenderer refToChild;
+
     public bool isToggled = false;
 
-    
+    private void Start()
+    {
+        List<SpriteRenderer> children = new List<SpriteRenderer>();
+        GetComponentsInChildren<SpriteRenderer>(children);
+        foreach (var item in children)
+        {
+            if (item.gameObject.name == "base")
+                refToChild = item;
+        }
+      
+    }
+
+    private void Update()
+    {
+        if (currentlyInDarkTheme)
+        {
+            refToChild.sprite = DarkTheme;
+
+       
+
+        }
+        else
+        {
+            refToChild.sprite = LightTheme;
+  
+        }
+
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {

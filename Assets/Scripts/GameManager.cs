@@ -35,11 +35,18 @@ public class GameManager : MonoBehaviour
 
     private void SwitchMusicAlive()
     {
+        Door.currentlyInDarkTheme = false;
+        Lever.currentlyInDarkTheme = false;
+
         StartCoroutine(camFX.Shake(0.5f, 0.5f));
         SoundManager.SwitchToAliveMusic();
     }
     private void SwitchMusicDead()
     {
+        Door.currentlyInDarkTheme = true;
+        Lever.currentlyInDarkTheme = true;
+
+
         StartCoroutine(camFX.Shake(0.5f, 0.5f));
         SoundManager.SwitchToDeadMusic();
     }
