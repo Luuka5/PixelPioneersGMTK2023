@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightController : MonoBehaviour
 {
-    public static bool currentlyInDarkTheme;
+    
     public float lightThemeIntensity = 0.1f;
     //public Color lightThemeColor;
     public float darkThemeIntensity = 1f;
@@ -23,7 +23,7 @@ public class LightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentlyInDarkTheme) {
+        if (GameManager.currentlyInDarkTheme) {
             light2d.intensity = lightThemeIntensity;
         } else {
             light2d.intensity = darkThemeIntensity;

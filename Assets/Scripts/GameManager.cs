@@ -11,7 +11,13 @@ public class GameManager : MonoBehaviour
     public SoundManager SoundManager;
     public List<GameObject> switchingWalls;
 
+
+    public static bool currentlyInDarkTheme = false;
+    public bool SetDarkFromStart = false;
+
     private CameraShake camFX;
+
+    bool dontDoCamShakeOnStartUp = true;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +26,21 @@ public class GameManager : MonoBehaviour
 
         PlayerControllerDarkMovement.PlayerKilled += SwitchMusicDead;
         PlayerControllerLightFlight.PlayerAwoke+= SwitchMusicAlive;
+
+        currentlyInDarkTheme = SetDarkFromStart;
+
+        if (currentlyInDarkTheme)
+        {
+            SwitchMusicDead();
+            dontDoCamShakeOnStartUp = false;
+        }
+        else
+        {
+            SwitchMusicAlive();
+            dontDoCamShakeOnStartUp = false;
+        }
+
+
     }
 
 
@@ -37,9 +58,8 @@ public class GameManager : MonoBehaviour
 
     private void SwitchMusicAlive()
     {
-        Door.currentlyInDarkTheme = false;
-        Lever.currentlyInDarkTheme = false;
-        LightController.currentlyInDarkTheme = false;
+        currentlyInDarkTheme = false;
+        
 
         foreach (GameObject wall in switchingWalls) {
             SwitchingWall swall = wall.GetComponent<SwitchingWall>();
@@ -51,15 +71,17 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        StartCoroutine(camFX.Shake(0.5f, 0.5f));
+        if(!dontDoCamShakeOnStartUp)
+            StartCoroutine(camFX.Shake(0.5f, 0.5f));
+
         SoundManager.SwitchToAliveMusic();
     }
     private void SwitchMusicDead()
     {
+        currentlyInDarkTheme = true;
+
         Debug.Log("music Switched");
-        Door.currentlyInDarkTheme = true;
-        Lever.currentlyInDarkTheme = true;
-        LightController.currentlyInDarkTheme = true;
+
         
         foreach (var wall in switchingWalls) {
             SwitchingWall swall = wall.GetComponent<SwitchingWall>();
@@ -71,7 +93,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        StartCoroutine(camFX.Shake(0.5f, 0.5f));
+        if (!dontDoCamShakeOnStartUp)
+            StartCoroutine(camFX.Shake(0.5f, 0.5f));
+
         SoundManager.SwitchToDeadMusic();
     }
 }
