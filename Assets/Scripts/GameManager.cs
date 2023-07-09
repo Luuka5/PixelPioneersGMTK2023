@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static PlayerControllerLightFlight;
 
+
 public class GameManager : MonoBehaviour
 {
     public Camera GameCamera;
@@ -36,9 +37,9 @@ public class GameManager : MonoBehaviour
 
     private void SwitchMusicAlive()
     {
-        Debug.Log("music Switched");
         Door.currentlyInDarkTheme = false;
         Lever.currentlyInDarkTheme = false;
+        LightController.currentlyInDarkTheme = false;
 
         foreach (GameObject wall in switchingWalls) {
             SwitchingWall swall = wall.GetComponent<SwitchingWall>();
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("music Switched");
         Door.currentlyInDarkTheme = true;
         Lever.currentlyInDarkTheme = true;
+        LightController.currentlyInDarkTheme = true;
         
         foreach (var wall in switchingWalls) {
             SwitchingWall swall = wall.GetComponent<SwitchingWall>();
