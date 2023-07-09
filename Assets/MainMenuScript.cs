@@ -11,11 +11,14 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("Level04");
     }
 
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
     public  void MenuExit()
     {
        Application.Quit();
     }
-
 
 }
