@@ -14,6 +14,16 @@ public class SoundManager : MonoBehaviour
     public AudioSource dead1Loop;
     public AudioSource dead2Loop;
     public AudioSource dead3Loop;
+
+    public AudioSource laserOn;
+    public AudioSource laserOff;
+    public AudioSource springboard;
+    public AudioSource death;
+    public AudioSource alive;
+    public AudioSource rocksBreak;
+    public AudioSource button;
+    public AudioSource uiClick;
+
     bool isPlayingAlive;
     
     // Start is called before the first frame update
@@ -96,5 +106,30 @@ public class SoundManager : MonoBehaviour
 
     void Awake(){
         StartMusic();
+    }
+
+    public void PlaySpringboardSFX(){
+        springboard.Play();
+    }
+    public void PlayLaserOnSFX(){
+        laserOn.Play();
+    }
+    public void PlayLaserOffSFX(){
+        laserOff.Play();
+    }
+    public void PlayDeathSFX(){
+        death.Play();
+    }
+    public void PlayAliveSFX(){
+        alive.Play();
+    }
+    public void PlayRocksBreakSFX(){
+        rocksBreak.Play();
+    }
+    public void PlayButtonSFX(){
+        button.Play();
+    }
+    public void PlayUIClickSFX(){
+        uiClick.Play();
     }
 }

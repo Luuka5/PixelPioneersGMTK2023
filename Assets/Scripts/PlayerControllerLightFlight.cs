@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public class PlayerControllerLightFlight : MonoBehaviour
 {
     public PlayerControllerDarkMovement otherController;
+    public SoundManager soundManager;
 
     public float speed = 15f;
     public float jumpForce = 5f;
@@ -30,7 +31,7 @@ public class PlayerControllerLightFlight : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         playerCollider = GetComponent<Collider2D>();
-
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     void FixedUpdate()
@@ -50,6 +51,7 @@ public class PlayerControllerLightFlight : MonoBehaviour
             if (PlayerAwoke != null)
             {
                 PlayerAwoke.Invoke();
+                soundManager.PlayAliveSFX();
             }
 
             Destroy(collision.gameObject);
