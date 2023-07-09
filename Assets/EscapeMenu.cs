@@ -9,6 +9,9 @@ public class EscapeMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
 
+    public GameObject additionalCanvas;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -27,6 +30,9 @@ public class EscapeMenu : MonoBehaviour
 
     public void Resume()
     {
+        if (additionalCanvas != null)
+            additionalCanvas.gameObject.SetActive(true);
+
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -34,6 +40,9 @@ public class EscapeMenu : MonoBehaviour
 
     void Pause()
     {
+        if (additionalCanvas != null)
+            additionalCanvas.gameObject.SetActive(false);
+
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
