@@ -13,6 +13,8 @@ public class PlayerControllerLightFlight : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D rb;
 
+    private Animator anim;
+
     [HideInInspector]
     public Vector2 AdditionalVelocity;
 
@@ -28,6 +30,7 @@ public class PlayerControllerLightFlight : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         playerCollider = GetComponent<Collider2D>();
 
     }

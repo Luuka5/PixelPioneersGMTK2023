@@ -28,6 +28,7 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         //ChildCollider cColl = childWithCollider.AddComponent<ChildCollider>();
         //cColl.LinkModels(this);
     }
