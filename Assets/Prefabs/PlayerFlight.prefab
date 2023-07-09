@@ -54,6 +54,7 @@ MonoBehaviour:
   speed: 12
   jumpForce: 5
   rb: {fileID: 0}
+  AdditionalVelocity: {x: 0, y: 0}
   aliveTag: Corpse
 --- !u!50 &3501356496829734906
 Rigidbody2D:
