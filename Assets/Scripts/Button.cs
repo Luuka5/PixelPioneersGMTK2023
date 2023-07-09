@@ -30,6 +30,7 @@ public class Button : MonoBehaviour
     {
         if (isPushed == true && collision.gameObject.GetComponent<PushButtonTrigger>() != null)
         {
+
             foreach (var item in ConnectedDoors)
             {
                 item.ChangeDoor();
