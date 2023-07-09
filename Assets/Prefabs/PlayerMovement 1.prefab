@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2378343910175136244
 MonoBehaviour:
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherController: {fileID: 0}
   speed: 8
-  jumpForce: 11
+  jumpForce: 15
   raycastDistance: 0.97
   corpsePrefab: {fileID: 7014820452486504538, guid: 7adcd1e501bf0dc42a1027e684191f97, type: 3}
   rb: {fileID: 0}

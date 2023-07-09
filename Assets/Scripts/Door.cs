@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
 
     private Animator anim;
 
-    public static bool currentlyInDarkTheme = false;
+    
 
     // only used for starting definition - to toggle use debug toggle 
     public bool isOpened;
@@ -43,7 +43,7 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if (currentlyInDarkTheme)
+        if (GameManager.currentlyInDarkTheme)
         {
             refToParrent.sprite = DarkThemeOuter;
 

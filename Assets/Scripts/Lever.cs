@@ -18,7 +18,7 @@ public class Lever : MonoBehaviour
     public Sprite ButtonOn;
     public Sprite ButtonOff;
 
-    public static bool currentlyInDarkTheme = false;
+    
 
     private SpriteRenderer refToChild;
 
@@ -41,7 +41,7 @@ public class Lever : MonoBehaviour
     private void Update()
     {
         
-        if (currentlyInDarkTheme)
+        if (GameManager.currentlyInDarkTheme)
         {
             refToChild.sprite = DarkTheme;
         }
