@@ -18,14 +18,24 @@ public class GameManager : MonoBehaviour
     private CameraShake camFX;
 
     bool dontDoCamShakeOnStartUp = true;
+  public  bool flipEvents = false;
 
     // Start is called before the first frame update
     void Start()
     {
         camFX = GameCamera.GetComponent<CameraShake>();
 
-        PlayerControllerDarkMovement.PlayerKilled += SwitchMusicDead;
-        PlayerControllerLightFlight.PlayerAwoke+= SwitchMusicAlive;
+        if(flipEvents)
+        {
+            PlayerControllerDarkMovement.PlayerKilled += SwitchMusicDead ;
+            PlayerControllerLightFlight.PlayerAwoke += SwitchMusicAlive;
+        }
+        else
+        {
+            PlayerControllerDarkMovement.PlayerKilled += SwitchMusicAlive;
+            PlayerControllerLightFlight.PlayerAwoke += SwitchMusicDead;
+        }
+     
 
         currentlyInDarkTheme = SetDarkFromStart;
 
@@ -46,8 +56,19 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        PlayerControllerDarkMovement.PlayerKilled -= SwitchMusicDead;
-        PlayerControllerLightFlight.PlayerAwoke -= SwitchMusicAlive;
+    
+
+        if (flipEvents)
+        {
+            PlayerControllerDarkMovement.PlayerKilled -= SwitchMusicDead;
+            PlayerControllerLightFlight.PlayerAwoke -= SwitchMusicAlive;
+        }
+        else
+        {
+            PlayerControllerDarkMovement.PlayerKilled -= SwitchMusicAlive;
+            PlayerControllerLightFlight.PlayerAwoke -= SwitchMusicDead;
+        }
+
     }
 
     // Update is called once per frame
