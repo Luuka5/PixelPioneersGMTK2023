@@ -10,11 +10,15 @@ public class PlayerControllerLightFlight : MonoBehaviour
     public float speed = 15f;
     public float jumpForce = 5f;
 
-    private Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
+
+    [HideInInspector]
+    public Vector2 AdditionalVelocity;
 
     private Collider2D playerCollider;
 
-
+   
 
     public string aliveTag = "Corpse";
     public delegate void AliveEvent();
@@ -32,7 +36,9 @@ public class PlayerControllerLightFlight : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(horizontalInput, verticalInput) * speed ;
+        Vector2 movement = new Vector2(horizontalInput, verticalInput) * speed + AdditionalVelocity;
+        AdditionalVelocity = Vector2.MoveTowards(AdditionalVelocity, Vector2.zero, 100 * Time.fixedDeltaTime);
+
         rb.velocity =  movement;
     }
 

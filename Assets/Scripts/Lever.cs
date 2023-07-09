@@ -14,12 +14,17 @@ public class Lever : MonoBehaviour
     public Sprite LightTheme;
     public Sprite DarkTheme;
 
+    public SpriteRenderer E_Button;
+    public Sprite ButtonOn;
+    public Sprite ButtonOff;
 
     public static bool currentlyInDarkTheme = false;
 
     private SpriteRenderer refToChild;
 
     public bool isToggled = false;
+
+    public bool PlayerNear = false;
 
     private void Start()
     {
@@ -35,28 +40,20 @@ public class Lever : MonoBehaviour
 
     private void Update()
     {
+        
         if (currentlyInDarkTheme)
         {
             refToChild.sprite = DarkTheme;
-
-       
-
         }
         else
         {
             refToChild.sprite = LightTheme;
-  
         }
 
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-       
-        if (Input.GetButtonDown("Interact"))
+        if(PlayerNear == true)
         {
-            if (interacted == false)
-            {
+            if (Input.GetButtonDown("Interact"))
+            {      
                 foreach (var item in ConnectedDoors)
                 {
                     item.ChangeDoor();
@@ -69,21 +66,32 @@ public class Lever : MonoBehaviour
                     Untoggled.SetActive(false);
                     Toggled.SetActive(true);
                 }
-                else 
-                    {
+                else
+                {
                     Untoggled.SetActive(true);
                     Toggled.SetActive(false);
                 }
+                
             }
-            
         }
+        
 
-        if (Input.GetButtonUp("Interact"))
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "PlayerFlight" || collision.name == "PlayerMovement")
         {
-            interacted = false;
+            E_Button.sprite = ButtonOn;
+            PlayerNear = true;
         }
-
-
-       
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == "PlayerFlight" || collision.name == "PlayerMovement")
+        {
+            E_Button.sprite = ButtonOff;
+            PlayerNear = false;
+        }
     }
 }

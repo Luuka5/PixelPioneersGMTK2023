@@ -101,6 +101,7 @@ MonoBehaviour:
   zombie: {fileID: 4791422024757455071, guid: 8e46fa4c2ec1347489735fa7e63a221a, type: 3}
   walkToTheRight: 1
   spawnInterval: 3
+  offset: {x: 0.5, y: 0, z: 0}
 --- !u!61 &3996478849098804971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110,7 +111,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3465499801678324067}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9f0ed94974b46994191e4da631333de7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

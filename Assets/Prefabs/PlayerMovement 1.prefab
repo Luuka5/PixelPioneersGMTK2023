@@ -55,6 +55,7 @@ MonoBehaviour:
   jumpForce: 11
   raycastDistance: 0.97
   corpsePrefab: {fileID: 7014820452486504538, guid: 7adcd1e501bf0dc42a1027e684191f97, type: 3}
+  rb: {fileID: 0}
   deathTag: Death
 --- !u!50 &2122621060707956580
 Rigidbody2D:

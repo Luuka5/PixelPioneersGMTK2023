@@ -14,7 +14,8 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
     //public GameObject childWithCollider;
     public GameObject corpsePrefab;
 
-    private Rigidbody2D rb;
+    [HideInInspector]
+    public Rigidbody2D rb;
     private bool isGrounded = false;
     private Collider2D playerCollider;
 
@@ -80,7 +81,7 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
         {
             if (PlayerKilled != null)
             {
-                PlayerKilled.Invoke();
+                PlayerKilled.Invoke();        
             }
 
             if (gameObject.active) {
@@ -95,6 +96,10 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
             // switch game controllers
             otherController.gameObject.SetActive(true);
             gameObject.SetActive(false);
+
+            //Add Velocity opposite of the Death source
+            if(otherController.rb == null) { otherController.rb = otherController.GetComponent<Rigidbody2D>(); }
+            otherController.AdditionalVelocity = (transform.position - collision.transform.position).normalized * 16;    
         }
     }
 

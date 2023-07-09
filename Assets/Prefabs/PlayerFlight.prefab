@@ -53,6 +53,7 @@ MonoBehaviour:
   otherController: {fileID: 0}
   speed: 12
   jumpForce: 5
+  rb: {fileID: 0}
   aliveTag: Corpse
 --- !u!50 &3501356496829734906
 Rigidbody2D:
@@ -177,7 +178,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 4602586270631964617}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 861a9354a4bc2574b806c1d90f2c629f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

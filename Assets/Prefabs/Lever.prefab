@@ -136,7 +136,7 @@ Transform:
   - {fileID: 7107077234951365876}
   - {fileID: 7319274271307469045}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5355376127006184291
 MonoBehaviour:
@@ -156,7 +156,11 @@ MonoBehaviour:
   Toggled: {fileID: 4484511256972079342}
   LightTheme: {fileID: 21300000, guid: a091fca2f2ffe41f99e53a0d823f8e3e, type: 3}
   DarkTheme: {fileID: 21300000, guid: 38c7d8538d4ac4216a6fb4e6581b16ee, type: 3}
+  E_Button: {fileID: 0}
+  ButtonOn: {fileID: 0}
+  ButtonOff: {fileID: 0}
   isToggled: 0
+  PlayerNear: 0
 --- !u!61 &3544451873737821751
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,7 +193,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13058531, y: -0.9467435}
+  m_Offset: {x: 0.4439354, y: -1.1808524}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -200,7 +204,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6976087, y: 2.893487}
+  m_Size: {x: 1.9616871, y: 2.4252691}
   m_EdgeRadius: 0
 --- !u!210 &3408721009455639485
 SortingGroup:
