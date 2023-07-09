@@ -1295,6 +1295,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameCamera: {fileID: 519420031}
   SoundManager: {fileID: 5803738983087668138}
+  switchingWalls:
+  - {fileID: 0}
 --- !u!4 &913901984
 Transform:
   m_ObjectHideFlags: 0
@@ -3391,6 +3393,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 241691639932020594, guid: dd284a07b2b3c314cb01378f1c873ad8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 296256194738702698, guid: dd284a07b2b3c314cb01378f1c873ad8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811063100896750988, guid: dd284a07b2b3c314cb01378f1c873ad8, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6604301978858933211, guid: dd284a07b2b3c314cb01378f1c873ad8, type: 3}
