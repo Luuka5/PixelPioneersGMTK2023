@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public Camera GameCamera;
     public SoundManager SoundManager;
+    public List<GameObject> switchingWalls;
 
     private CameraShake camFX;
 
@@ -35,11 +36,39 @@ public class GameManager : MonoBehaviour
 
     private void SwitchMusicAlive()
     {
+        Debug.Log("music Switched");
+        Door.currentlyInDarkTheme = false;
+        Lever.currentlyInDarkTheme = false;
+
+        foreach (GameObject wall in switchingWalls) {
+            SwitchingWall swall = wall.GetComponent<SwitchingWall>();
+            if (swall != null)
+            {
+                wall.SetActive(swall.visibleInDarkTheme);
+            } else {
+                wall.SetActive(false);
+            }
+        }
+
         StartCoroutine(camFX.Shake(0.5f, 0.5f));
         SoundManager.SwitchToAliveMusic();
     }
     private void SwitchMusicDead()
     {
+        Debug.Log("music Switched");
+        Door.currentlyInDarkTheme = true;
+        Lever.currentlyInDarkTheme = true;
+        
+        foreach (var wall in switchingWalls) {
+            SwitchingWall swall = wall.GetComponent<SwitchingWall>();
+            if (swall != null)
+            {
+                wall.SetActive(!swall.visibleInDarkTheme);
+            } else {
+                wall.SetActive(true);
+            }
+        }
+
         StartCoroutine(camFX.Shake(0.5f, 0.5f));
         SoundManager.SwitchToDeadMusic();
     }

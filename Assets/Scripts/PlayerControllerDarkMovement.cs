@@ -11,7 +11,7 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
     public float jumpForce = 5f;
     public float raycastDistance = 0.2f;
 
-    public GameObject childWithCollider;
+    //public GameObject childWithCollider;
     public GameObject corpsePrefab;
 
     private Rigidbody2D rb;
@@ -26,8 +26,8 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        ChildCollider cColl = childWithCollider.AddComponent<ChildCollider>();
-        cColl.LinkModels(this);
+        //ChildCollider cColl = childWithCollider.AddComponent<ChildCollider>();
+        //cColl.LinkModels(this);
     }
 
 
