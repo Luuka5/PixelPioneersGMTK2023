@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5946634416656570515}
   - component: {fileID: 4239204973795342366}
   - component: {fileID: 9184284525347557794}
+  - component: {fileID: 8114736337446256864}
   m_Layer: 6
   m_Name: Tile_Spike
   m_TagString: Death
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9375, y: 1.9375}
   m_EdgeRadius: 0
+--- !u!114 &8114736337446256864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158979077720172877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88619bc59e3bff74493a1a8909ea3468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightTheme: {fileID: 21300000, guid: e0364a3e9daba4fa4af7a48f849d4bb6, type: 3}
+  DarkTheme: {fileID: 21300000, guid: b9c9aa56318561346b4f6104b00c1679, type: 3}
