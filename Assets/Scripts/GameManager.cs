@@ -54,9 +54,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(camFX.Shake(0.5f, 0.5f));
         SoundManager.SwitchToAliveMusic();
     }
+    
     private void SwitchMusicDead()
     {
-        Debug.Log("music Switched");
         Door.currentlyInDarkTheme = true;
         Lever.currentlyInDarkTheme = true;
         LightController.currentlyInDarkTheme = true;
@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
             SwitchingWall swall = wall.GetComponent<SwitchingWall>();
             if (swall != null)
             {
+                Debug.Log("sWall working");
                 wall.SetActive(!swall.visibleInDarkTheme);
             } else {
                 wall.SetActive(true);

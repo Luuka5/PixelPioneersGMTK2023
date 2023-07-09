@@ -11,7 +11,6 @@ public class LightController : MonoBehaviour
     //public Color darkThemeColor;
     //public bool useColor = true;
 
-
     private UnityEngine.Rendering.Universal.Light2D light2d;
 
     // Start is called before the first frame update
@@ -24,9 +23,11 @@ public class LightController : MonoBehaviour
     void Update()
     {
         if (currentlyInDarkTheme) {
+            Debug.Log("Lightingh ligth");
             light2d.intensity = lightThemeIntensity;
         } else {
             light2d.intensity = darkThemeIntensity;
+            Debug.Log("Lightingh dark");
         }
 
         /*
