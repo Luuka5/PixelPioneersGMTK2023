@@ -18,7 +18,11 @@ public class SoundManager : MonoBehaviour
     public AudioSource laserOn;
     public AudioSource laserOff;
     public AudioSource springboard;
-
+    public AudioSource death;
+    public AudioSource alive;
+    public AudioSource rocksBreak;
+    public AudioSource button;
+    public AudioSource uiClick;
 
     bool isPlayingAlive;
     
@@ -107,12 +111,25 @@ public class SoundManager : MonoBehaviour
     public void PlaySpringboardSFX(){
         springboard.Play();
     }
-
     public void PlayLaserOnSFX(){
         laserOn.Play();
     }
-
     public void PlayLaserOffSFX(){
         laserOff.Play();
+    }
+    public void PlayDeathSFX(){
+        death.Play();
+    }
+    public void PlayAliveSFX(){
+        alive.Play();
+    }
+    public void PlayRocksBreakSFX(){
+        rocksBreak.Play();
+    }
+    public void PlayButtonSFX(){
+        button.Play();
+    }
+    public void PlayUIClickSFX(){
+        uiClick.Play();
     }
 }

@@ -7,6 +7,8 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
 {
     public PlayerControllerLightFlight otherController;
 
+    public SoundManager soundManager;
+
     public float speed = 15f;
     public float jumpForce = 5f;
     public float raycastDistance = 0.2f;
@@ -29,6 +31,7 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
         //ChildCollider cColl = childWithCollider.AddComponent<ChildCollider>();
         //cColl.LinkModels(this);
     }
@@ -92,7 +95,8 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
         {
             if (PlayerKilled != null)
             {
-                PlayerKilled.Invoke();        
+                PlayerKilled.Invoke();
+                soundManager.PlayDeathSFX();
             }
 
             if (gameObject.active) {
