@@ -6,6 +6,9 @@ public class SoundManager : MonoBehaviour
 {
     float lastSwitchTime;
     const float blocDuration = 12.343f;
+
+    float musicVolume = 0.5f;//0 to 1
+
     public AudioSource mainLoop;
     public AudioSource mainFirst;
     public AudioSource alive1Loop;
@@ -40,13 +43,15 @@ public class SoundManager : MonoBehaviour
         dead3Loop.PlayScheduled(startTime);
         
         mainFirst.loop = false;
+        mainLoop.volume = 0;
+        mainFirst.volume = musicVolume;
         StartCoroutine(KeepMainLoop());
     }
 
     private IEnumerator KeepMainLoop()
     {
         yield return new WaitForSeconds(blocDuration);
-        mainLoop.volume = 1f;
+        mainLoop.volume = musicVolume;
     }
 
     // Update is called once per frame
@@ -55,35 +60,35 @@ public class SoundManager : MonoBehaviour
         float timeSinceSwitch = Time.time - lastSwitchTime;
         if(isPlayingAlive){
             if(timeSinceSwitch < 3f){
-                alive1Loop.volume = timeSinceSwitch/3f;
+                alive1Loop.volume = musicVolume*timeSinceSwitch/3f;
             }else{
-                alive1Loop.volume = 1;
+                alive1Loop.volume = musicVolume;
             }
             if(timeSinceSwitch < 10f){
-                alive2Loop.volume = timeSinceSwitch/10f;
+                alive2Loop.volume = musicVolume*timeSinceSwitch/10f;
             }else{
-                alive2Loop.volume = 1;
+                alive2Loop.volume = musicVolume;
             }
             if(timeSinceSwitch < 15f){
-                alive3Loop.volume = timeSinceSwitch/15f;
+                alive3Loop.volume = musicVolume*timeSinceSwitch/15f;
             }else{
-                alive3Loop.volume = 1;
+                alive3Loop.volume = musicVolume;
             }
         }else{
             if(timeSinceSwitch < 3f){
-                dead1Loop.volume = timeSinceSwitch/3f;
+                dead1Loop.volume = musicVolume*timeSinceSwitch/3f;
             }else{
-                dead1Loop.volume = 1;
+                dead1Loop.volume = musicVolume;
             }
             if(timeSinceSwitch < 10f){
-                dead2Loop.volume = timeSinceSwitch/10f;
+                dead2Loop.volume = musicVolume*timeSinceSwitch/10f;
             }else{
-                dead2Loop.volume = 1;
+                dead2Loop.volume = musicVolume;
             }
             if(timeSinceSwitch < 15f){
-                dead3Loop.volume = timeSinceSwitch/15f;
+                dead3Loop.volume = musicVolume*timeSinceSwitch/15f;
             }else{
-                dead3Loop.volume = 1;
+                dead3Loop.volume = musicVolume;
             }
         }
     }
