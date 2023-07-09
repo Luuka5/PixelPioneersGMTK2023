@@ -15,6 +15,7 @@ public class LevelEndController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.tag == "Player")
         {
             // Only specifying the sceneName or sceneBuildIndex will load the Scene with the Single mode
