@@ -6,6 +6,8 @@ public class Springboard : MonoBehaviour
 {
     public float springforce = 1f;
 
+    public SoundManager soundManager;
+
     public float springboardPushdownValue = 0.25f;
     private Vector3 oldPos;
 
@@ -13,6 +15,7 @@ public class Springboard : MonoBehaviour
     void Start()
     {
         oldPos = transform.position;
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,7 @@ public class Springboard : MonoBehaviour
             if (a != null)
             {
                 a.velocity = new Vector2(a.velocity.x,   springforce);
+                soundManager.PlaySpringboardSFX();
             }
 
             // animation down

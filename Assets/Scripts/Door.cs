@@ -24,6 +24,8 @@ public class Door : MonoBehaviour
     private SpriteRenderer refToParrent;
     private SpriteRenderer refToSelf;
 
+    public SoundManager soundManager;
+
     private Animator anim;
 
     
@@ -39,6 +41,7 @@ public class Door : MonoBehaviour
         refToParrent = GetComponentInParent<SpriteRenderer>(true);
         refToSelf = GetComponent<SpriteRenderer>();
         anim = GetComponentInParent<Animator>();
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
     }
 
     private void Update()
@@ -101,5 +104,11 @@ public class Door : MonoBehaviour
         gameObject.transform.position = targetPos;
 
         isOpened = !isOpened;
+
+        if(isOpened){
+            soundManager.PlayLaserOffSFX();
+        }else{
+            soundManager.PlayLaserOnSFX();
+        }
     }
 }
