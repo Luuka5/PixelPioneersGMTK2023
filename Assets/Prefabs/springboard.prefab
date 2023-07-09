@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   springforce: 23.5
+  soundManager: {fileID: 0}
   springboardPushdownValue: 0.25
 --- !u!61 &1213805719659156207
 BoxCollider2D:

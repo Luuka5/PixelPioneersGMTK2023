@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherController: {fileID: 0}
+  soundManager: {fileID: 0}
   speed: 8
   jumpForce: 15
   raycastDistance: 0.97

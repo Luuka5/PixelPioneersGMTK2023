@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   otherController: {fileID: 0}
+  soundManager: {fileID: 0}
   speed: 12
   jumpForce: 5
   rb: {fileID: 0}

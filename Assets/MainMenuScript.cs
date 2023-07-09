@@ -8,7 +8,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void MenuStart()
     {
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("Level04");
     }
 
 

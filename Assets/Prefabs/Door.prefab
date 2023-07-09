@@ -320,6 +320,7 @@ MonoBehaviour:
   LightThemeInner: {fileID: 21300000, guid: dfd6bda76bee64c3da5f0054b006f718, type: 3}
   DarkThemeOuter: {fileID: 21300000, guid: fdb6e8b1adfa54129b878ce9cde341db, type: 3}
   DarkThemeInner: {fileID: 21300000, guid: a66e6f1ae35624f71a94e3906f96891b, type: 3}
+  soundManager: {fileID: 0}
   isOpened: 0
   howFar: 2.1
   debugToggle: 0
