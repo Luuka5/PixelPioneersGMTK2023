@@ -494,23 +494,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &319681500 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4281556410789127415, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
-  m_PrefabInstance: {fileID: 7112484833913136094}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &319681503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319681500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc183aba3c1a4a29ae8217740c0a80e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &335884537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1149,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: f94a31a4f96afb24d8bd788e387e6243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1193,11 +1176,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &808098970 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4281556410789127415, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
-  m_PrefabInstance: {fileID: 7112484833913136094}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &878241008
 GameObject:
   m_ObjectHideFlags: 0
@@ -4338,13 +4316,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1282441344906102710, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
+      propertyPath: corpsePrefab
+      value: 
+      objectReference: {fileID: 7014820452486504538, guid: 7adcd1e501bf0dc42a1027e684191f97, type: 3}
+    - target: {fileID: 1282441344906102710, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
       propertyPath: otherController
       value: 
       objectReference: {fileID: 1857598361}
     - target: {fileID: 1282441344906102710, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
       propertyPath: childWithCollider
       value: 
-      objectReference: {fileID: 319681500}
+      objectReference: {fileID: 0}
     - target: {fileID: 2970840188290501178, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -4424,7 +4406,4 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7585118749569726090, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 90067707}
-    - targetCorrespondingSourceObject: {fileID: 4281556410789127415, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 319681503}
   m_SourcePrefab: {fileID: 100100000, guid: 21141f33ed4c889468e8fca1d500473b, type: 3}

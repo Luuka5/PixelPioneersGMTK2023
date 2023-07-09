@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4128545437906983558}
   - component: {fileID: 4584403753961998017}
   - component: {fileID: 3347668183535793922}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerMovement
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -53,6 +53,7 @@ MonoBehaviour:
   jumpForce: 11
   raycastDistance: 0.97
   childWithCollider: {fileID: 0}
+  corpsePrefab: {fileID: 0}
   deathTag: Death
 --- !u!50 &3257131562247741269
 Rigidbody2D:
