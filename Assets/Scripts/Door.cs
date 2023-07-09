@@ -71,7 +71,8 @@ public class Door : MonoBehaviour
 
     public void ChangeDoor()
     {
-        anim.SetBool("Open", !isOpened);
+        if(anim != null)
+            anim.SetBool("Open", !isOpened);
 
         float targetX = gameObject.transform.position.x;
         float targetY = gameObject.transform.position.y;

@@ -22,11 +22,11 @@ public class LightController : MonoBehaviour
     void Update()
     {
         if (GameManager.currentlyInDarkTheme) {
-            Debug.Log("Lightingh ligth");
-            light2d.intensity = lightThemeIntensity;
-        } else {
+     
             light2d.intensity = darkThemeIntensity;
-            Debug.Log("Lightingh dark");
+        } else {
+            light2d.intensity = lightThemeIntensity;
+
         }
 
         /*

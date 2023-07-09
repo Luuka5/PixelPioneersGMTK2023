@@ -20,8 +20,6 @@ public class PlayerControllerLightFlight : MonoBehaviour
 
     private Collider2D playerCollider;
 
-   
-
     public string aliveTag = "Corpse";
     public delegate void AliveEvent();
     public static event AliveEvent PlayerAwoke;
