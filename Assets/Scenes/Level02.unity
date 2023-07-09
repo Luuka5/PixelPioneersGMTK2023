@@ -26336,7 +26336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7183333456703611992, guid: 839cf7dee713e0c41bc486572336eb59, type: 3}
       propertyPath: nextLevelName
-      value: MainMenu
+      value: EndingScreen
       objectReference: {fileID: 0}
     - target: {fileID: 8998376277792618677, guid: 839cf7dee713e0c41bc486572336eb59, type: 3}
       propertyPath: m_RootOrder
