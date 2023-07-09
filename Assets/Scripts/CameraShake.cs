@@ -16,6 +16,8 @@ using UnityEngine;
                 float y0ffset = Random.Range(-0.5f, 0.5f) * magnitude;
                 transform.localPosition = new Vector3(Offset, y0ffset, originalPos.z);
                 elapsedTime += Time.deltaTime;
+                //simple smoothing
+                magnitude *= 0.98f;
                 // wait one frame
                 yield return null;
                 

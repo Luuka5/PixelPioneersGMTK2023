@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
     private SpriteRenderer refToParrent;
     private SpriteRenderer refToSelf;
 
+    private Animator anim;
 
     public static bool currentlyInDarkTheme = false;
 
@@ -37,7 +38,7 @@ public class Door : MonoBehaviour
     {
         refToParrent = GetComponentInParent<SpriteRenderer>(true);
         refToSelf = GetComponent<SpriteRenderer>();
-
+        anim = GetComponentInParent<Animator>();
     }
 
     private void Update()
@@ -70,6 +71,8 @@ public class Door : MonoBehaviour
 
     public void ChangeDoor()
     {
+        anim.SetBool("Open", !isOpened);
+
         float targetX = gameObject.transform.position.x;
         float targetY = gameObject.transform.position.y;
         switch (openingPosition)

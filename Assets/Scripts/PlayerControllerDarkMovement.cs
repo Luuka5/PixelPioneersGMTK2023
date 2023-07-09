@@ -16,6 +16,7 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
 
     [HideInInspector]
     public Rigidbody2D rb;
+    private Animator anim;
     private bool isGrounded = false;
     private Collider2D playerCollider;
 
@@ -37,6 +38,15 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
         float horizontalInput = Input.GetAxis("Horizontal");
         //float jumpInput = Input.GetAxis("Jump");
         bool jumpInput = Input.GetButton("Jump");
+
+        if(horizontalInput == 0)
+        {
+            anim.SetBool("Walking", false);
+        }
+        else
+        {
+            anim.SetBool("Walking", true);
+        }
 
         // Move horizontally
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);

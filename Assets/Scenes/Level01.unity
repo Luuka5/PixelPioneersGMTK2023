@@ -259,6 +259,10 @@ PrefabInstance:
       propertyPath: openingPosition
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8833950413975127491, guid: e25bbcc618fd7474b8e5903ab9af85be, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6a2b299075f18cd4c9214f8f9e3ced57, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8792,6 +8796,10 @@ PrefabInstance:
       propertyPath: howFar
       value: 5.3
       objectReference: {fileID: 0}
+    - target: {fileID: 8833950413975127491, guid: e25bbcc618fd7474b8e5903ab9af85be, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6a2b299075f18cd4c9214f8f9e3ced57, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -92,6 +92,7 @@ public class Lever : MonoBehaviour
         {
             E_Button.sprite = ButtonOff;
             PlayerNear = false;
+    
         }
     }
 }
