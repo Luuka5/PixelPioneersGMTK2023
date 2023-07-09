@@ -1,0 +1,97 @@
+
+Zombie.png
+size: 240,240
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BACK FEET
+  rotate: false
+  xy: 10, 11
+  size: 40, 40
+  orig: 190, 247
+  offset: 79, 23
+  index: -1
+BACK FIST
+  rotate: false
+  xy: 187, 55
+  size: 36, 48
+  orig: 190, 247
+  offset: 29, 122
+  index: -1
+BACK LEG
+  rotate: true
+  xy: 150, 10
+  size: 35, 54
+  orig: 190, 247
+  offset: 87, 47
+  index: -1
+BODY
+  rotate: false
+  xy: 86, 159
+  size: 51, 71
+  orig: 190, 247
+  offset: 86, 86
+  index: -1
+FLOWER
+  rotate: true
+  xy: 59, 66
+  size: 72, 47
+  orig: 190, 247
+  offset: 41, 183
+  index: -1
+FRONT FEET
+  rotate: false
+  xy: 187, 113
+  size: 39, 54
+  orig: 190, 247
+  offset: 111, 18
+  index: -1
+FRONT FIST
+  rotate: false
+  xy: 187, 177
+  size: 43, 53
+  orig: 190, 247
+  offset: 33, 71
+  index: -1
+FRONT LEG
+  rotate: true
+  xy: 60, 12
+  size: 44, 53
+  orig: 190, 247
+  offset: 101, 49
+  index: -1
+HAND L
+  rotate: true
+  xy: 10, 61
+  size: 77, 39
+  orig: 190, 247
+  offset: 48, 113
+  index: -1
+HEAD
+  rotate: false
+  xy: 10, 148
+  size: 66, 82
+  orig: 190, 247
+  offset: 76, 135
+  index: -1
+Hand R
+  rotate: true
+  xy: 116, 86
+  size: 63, 61
+  orig: 190, 247
+  offset: 59, 82
+  index: -1
+Shadow
+  rotate: true
+  xy: 123, 13
+  size: 63, 17
+  orig: 190, 247
+  offset: 84, 21
+  index: -1
+jaw
+  rotate: false
+  xy: 147, 202
+  size: 29, 28
+  orig: 190, 247
+  offset: 82, 138
+  index: -1

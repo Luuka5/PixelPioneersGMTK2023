@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,6 +32,9 @@ public class Springboard : MonoBehaviour
             collision.gameObject.TryGetComponent<Rigidbody2D>(out Rigidbody2D a);
             if (a != null)
             {
+                (a.gameObject.GetComponent<SkeletonAnimation>()).AnimationName = "jump";
+
+
                 a.velocity = new Vector2(a.velocity.x,   springforce);
                 soundManager.PlaySpringboardSFX();
             }
