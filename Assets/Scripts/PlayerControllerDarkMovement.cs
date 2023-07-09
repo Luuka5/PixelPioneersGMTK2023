@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,14 +27,39 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
     public delegate void KillEvent();
     public static event KillEvent PlayerKilled;
 
+    private SkeletonAnimation skeletonAnimation;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+
+        skeletonAnimation = GetComponent<SkeletonAnimation>();
+
         //ChildCollider cColl = childWithCollider.AddComponent<ChildCollider>();
         //cColl.LinkModels(this);
+    }
+
+    private void Update()
+    {
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        if (horizontalInput >= 0.5f)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+            skeletonAnimation.AnimationName = "run";
+        }
+        else if (horizontalInput <= -0.5)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            skeletonAnimation.AnimationName = "run";
+        }
+        else
+        {
+            skeletonAnimation.AnimationName = "idle";
+        }
     }
 
 
@@ -43,14 +69,16 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
         //float jumpInput = Input.GetAxis("Jump");
         bool jumpInput = Input.GetButton("Jump");
 
-        if(horizontalInput == 0)
-        {
-            anim.SetBool("Walking", false);
-        }
-        else
-        {
-            anim.SetBool("Walking", true);
-        }
+        //if(horizontalInput == 0)
+        //{
+        //    anim.SetBool("Walking", false);
+        //}
+        //else
+        //{
+        //    anim.SetBool("Walking", true);
+        //}
+
+
 
         // Move horizontally
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
@@ -65,6 +93,7 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
         if (isGrounded && jumpInput )
         {
             //rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            skeletonAnimation.AnimationName = "jump";
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
@@ -95,6 +124,8 @@ public class PlayerControllerDarkMovement : MonoBehaviour, ICollidable
         {
             if (PlayerKilled != null)
             {
+                skeletonAnimation.AnimationName = "death";
+
                 PlayerKilled.Invoke();
                 soundManager.PlayDeathSFX();
             }

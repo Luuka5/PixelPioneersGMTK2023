@@ -1,0 +1,97 @@
+
+Character_Alive.png
+size: 230,230
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BODY
+  rotate: false
+  xy: 88, 53
+  size: 51, 70
+  orig: 206, 317
+  offset: 78, 49
+  index: -1
+COAT2
+  rotate: true
+  xy: 88, 17
+  size: 26, 59
+  orig: 206, 317
+  offset: 113, 48
+  index: -1
+EYE1
+  rotate: false
+  xy: 199, 197
+  size: 13, 23
+  orig: 206, 317
+  offset: 101, 150
+  index: -1
+EYE2
+  rotate: true
+  xy: 199, 174
+  size: 13, 21
+  orig: 206, 317
+  offset: 116, 147
+  index: -1
+FIRE
+  rotate: false
+  xy: 149, 77
+  size: 38, 54
+  orig: 206, 317
+  offset: 67, 187
+  index: -1
+HANDLe
+  rotate: true
+  xy: 134, 173
+  size: 47, 55
+  orig: 206, 317
+  offset: 37, 110
+  index: -1
+HEAD
+  rotate: false
+  xy: 10, 117
+  size: 54, 103
+  orig: 206, 317
+  offset: 72, 107
+  index: -1
+LEG R
+  rotate: false
+  xy: 157, 19
+  size: 25, 48
+  orig: 206, 317
+  offset: 103, 33
+  index: -1
+SHADOW
+  rotate: true
+  xy: 201, 97
+  size: 67, 14
+  orig: 206, 317
+  offset: 67, 35
+  index: -1
+coat1
+  rotate: false
+  xy: 10, 28
+  size: 68, 79
+  orig: 206, 317
+  offset: 53, 43
+  index: -1
+gem
+  rotate: false
+  xy: 192, 28
+  size: 25, 39
+  orig: 206, 317
+  offset: 106, 86
+  index: -1
+leg L
+  rotate: true
+  xy: 134, 141
+  size: 22, 57
+  orig: 206, 317
+  offset: 84, 25
+  index: -1
+shoulders
+  rotate: true
+  xy: 74, 133
+  size: 87, 50
+  orig: 206, 317
+  offset: 53, 87
+  index: -1

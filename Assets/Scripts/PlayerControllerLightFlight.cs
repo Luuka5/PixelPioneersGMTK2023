@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,18 +27,50 @@ public class PlayerControllerLightFlight : MonoBehaviour
     public static event AliveEvent PlayerAwoke;
 
 
+    private SkeletonAnimation skeletonAnimation;
+
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         playerCollider = GetComponent<Collider2D>();
         soundManager = GameObject.Find("SoundManager").GetComponent<SoundManager>();
+
+        skeletonAnimation = GetComponent<SkeletonAnimation>();
+
     }
+
+    private void Update()
+    {
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+
+        if (horizontalInput >= 0.5f)
+        {
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+            skeletonAnimation.AnimationName = "run";
+        }
+        else if (horizontalInput <= -0.5)
+        {
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            skeletonAnimation.AnimationName = "run";
+        }
+        else
+        {
+            skeletonAnimation.AnimationName = "idle";
+        }
+    }
+
 
     void FixedUpdate()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+
+
+
         Vector2 movement = new Vector2(horizontalInput, verticalInput) * speed + AdditionalVelocity;
         AdditionalVelocity = Vector2.MoveTowards(AdditionalVelocity, Vector2.zero, 100 * Time.fixedDeltaTime);
 
@@ -50,6 +83,8 @@ public class PlayerControllerLightFlight : MonoBehaviour
         {
             if (PlayerAwoke != null)
             {
+                skeletonAnimation.AnimationName = "inhabit";
+
                 PlayerAwoke.Invoke();
                 soundManager.PlayAliveSFX();
             }
