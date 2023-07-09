@@ -44212,7 +44212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf362cc7887ae7458c0a2d77f0696a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visibleInDarkTheme: 1
+  visibleInDarkTheme: 0
 --- !u!1001 &1314927048
 PrefabInstance:
   m_ObjectHideFlags: 0
