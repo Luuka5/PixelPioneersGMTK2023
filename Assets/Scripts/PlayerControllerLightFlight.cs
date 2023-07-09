@@ -44,23 +44,28 @@ public class PlayerControllerLightFlight : MonoBehaviour
 
     private void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        if(skeletonAnimation != null)
+        {
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
 
 
-        if (horizontalInput >= 0.5f)
-        {
-            gameObject.transform.localScale = new Vector3(1, 1, 1);
-            skeletonAnimation.AnimationName = "run";
+            if (horizontalInput >= 0.5f)
+            {
+                gameObject.transform.localScale = new Vector3(1, 1, 1);
+                skeletonAnimation.AnimationName = "run";
+            }
+            else if (horizontalInput <= -0.5)
+            {
+                gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                skeletonAnimation.AnimationName = "run";
+            }
+            else
+            {
+                skeletonAnimation.AnimationName = "idle";
+            }
+
         }
-        else if (horizontalInput <= -0.5)
-        {
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
-            skeletonAnimation.AnimationName = "run";
-        }
-        else
-        {
-            skeletonAnimation.AnimationName = "idle";
-        }
+   
     }
 
 
