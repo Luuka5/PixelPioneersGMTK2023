@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EscapeMenu : MonoBehaviour
 {
@@ -37,14 +39,17 @@ public class EscapeMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void LoadMenu()
+ 
+
+    public void Restart()
     {
-        Debug.Log("Loading Game...");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Resume();
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quitting Game...");
+      Application.Quit();
     }
 
 }
