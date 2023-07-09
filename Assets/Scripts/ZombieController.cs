@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,10 +15,15 @@ public class ZombieController : MonoBehaviour, ICollidable
     public GameObject childWithCollider;
     private bool isGrounded = false;
 
+    private SkeletonAnimation skeletonAnimation;
+
+
     // Start is called before the first frame update
     void Start()
     {
         ChildCollider cColl = childWithCollider.AddComponent<ChildCollider>();
+        skeletonAnimation = GetComponent<SkeletonAnimation>();
+
         rb = GetComponent<Rigidbody2D>();
         cColl.LinkModels(this);
     }
