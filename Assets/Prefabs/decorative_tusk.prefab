@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7061757961330811079}
   - component: {fileID: 1133927070274974946}
   - component: {fileID: 4817453382939463371}
+  - component: {fileID: 6257751791525591145}
   m_Layer: 0
   m_Name: decorative_tusk
   m_TagString: Untagged
@@ -97,3 +98,17 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
+--- !u!114 &6257751791525591145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881001644994002890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88619bc59e3bff74493a1a8909ea3468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightTheme: {fileID: 21300000, guid: 39060520f2499ea409b050ae94a941ed, type: 3}
+  DarkTheme: {fileID: 21300000, guid: 7a27879070a515f46bba5412b21591ee, type: 3}
